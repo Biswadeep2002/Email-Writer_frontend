@@ -2,6 +2,7 @@
   import './App.css'
   import { Button, CircularProgress, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
   import axios from 'axios';
+  import ServerWakeupBanner from './components/ServerWakeupBanner';
 
   const EXTENSION_VIDEO_SRC = '/2026-09-17%2016-27-00.mp4';
 
@@ -101,6 +102,7 @@
 
     return (
       <main className="app-shell">
+        <ServerWakeupBanner onOpenVideo={openVideo} videoOpen={videoOpen} />
         <header className="topbar">
           <div className="brand-mark" aria-label="Reply Studio home"><span>Reply</span>Studio</div>
           <div className="topbar-note"><span className="status-dot" /> AI-assisted writing desk</div>
@@ -118,7 +120,7 @@
               type="button"
               onClick={openVideo}
             >
-              Watch extension video
+              Watch Extension Video
             </button>
             <button
               className="theme-toggle"
